@@ -15,7 +15,7 @@ Day-ahead forecasting of half-hourly GB electricity system prices using open dat
 The model beats the 24h-naive baseline by **7.8% on MAE**, trained and tested on one year of real half-hourly GB system prices with a strict chronological split.
 
 Real system prices are highly volatile — the model captures the daily demand-driven pattern well but struggles with extreme spike events. Adding wind generation data is the planned next step, as wind is the largest driver of GB price spikes.
-![Dashboard](dashboard.png)
+![Dashboard](Screenshot 2026-07-06 210818.png)
 
 ## How it works
 
