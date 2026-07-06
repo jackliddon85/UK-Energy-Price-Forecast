@@ -8,9 +8,13 @@ Day-ahead forecasting of half-hourly GB electricity system prices using open dat
 
 | Model | MAE (£/MWh) | RMSE (£/MWh) |
 |---|---|---|
-| Gradient boosting | _run to fill in_ | |
-| Naive (same time yesterday) | | |
-| Naive (same time last week) | | |
+| Gradient boosting | **38.73** | **53.97** |
+| Naive (same time yesterday) | 42.01 | 63.82 |
+| Naive (same time last week) | 42.57 | 64.45 |
+
+The model beats the 24h-naive baseline by **7.8% on MAE**, trained and tested on one year of real half-hourly GB system prices with a strict chronological split.
+
+Real system prices are highly volatile — the model captures the daily demand-driven pattern well but struggles with extreme spike events. Adding wind generation data is the planned next step, as wind is the largest driver of GB price spikes.
 
 ## How it works
 
@@ -43,7 +47,7 @@ streamlit run app.py
 - Add weather features (temperature, wind) from the free [Open-Meteo API](https://open-meteo.com/) — wind generation is a major price driver in GB
 - Forecast quantiles instead of point estimates to capture price-spike risk
 - Simulate a home battery: charge at forecast-cheap periods, discharge at peak, and report the £ saved
-- Deploy the dashboard free on Streamlit Community Cloud and link it from your LinkedIn
+- Deploy the dashboard free on Streamlit Community Cloud and link it
 
 ## Data source
 
