@@ -16,6 +16,7 @@ The model beats the 24h-naive baseline by **7.8% on MAE**, trained and tested on
 
 Real system prices are highly volatile — the model captures the daily demand-driven pattern well but struggles with extreme spike events. Adding wind generation data is the planned next step, as wind is the largest driver of GB price spikes.
 ![Dashboard](dashboard.png)
+
 ## How it works
 
 1. **Data** — half-hourly system prices and national demand outturn from Elexon, fetched via `src/fetch_data.py`.
